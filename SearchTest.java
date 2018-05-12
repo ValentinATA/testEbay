@@ -24,6 +24,8 @@ public class SearchTest {
         List<WebElement> listResult = chromeDriver.findElementsByXPath("//li[@class='s-item']");
         Assert.assertEquals(50,listResult.size());
         exitAccount();
+        WebElement exitResultText = chromeDriver.findElementByClassName("ds3pHTxt");
+        Assert.assertTrue(exitResultText.isEnabled());
     }
 
     public void exitAccount() {
