@@ -2,10 +2,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Wait;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +16,6 @@ public class SearchTest {
         chromeDriver = new ChromeDriver();
         chromeDriver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
     }
-
 
     @Test
     public void testSearcListResult(){
