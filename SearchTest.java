@@ -23,16 +23,16 @@ public class SearchTest {
         searchItem("blackberry");
         List<WebElement> listResult = chromeDriver.findElementsByXPath("//li[@class='s-item']");
         Assert.assertEquals(50,listResult.size());
-        exitAccount();
-        WebElement exitResultText = chromeDriver.findElementByClassName("ds3pHTxt");
-        Assert.assertTrue(exitResultText.isEnabled());
+        exitAccountAndAssert();
     }
 
-    public void exitAccount() {
+    public void exitAccountAndAssert() {
         WebElement accountPopUpButton = chromeDriver.findElementById("gh-ug");
         accountPopUpButton.click();
         WebElement exitAccountButton = chromeDriver.findElementByXPath("//a[@_sp='m570.l2622']");
         exitAccountButton.click();
+        WebElement exitResultText = chromeDriver.findElementByClassName("ds3pHTxt");
+        Assert.assertTrue(exitResultText.isEnabled());
     }
 
     public void searchItem(String searchItemName) {
